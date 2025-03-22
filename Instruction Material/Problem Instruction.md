@@ -2,7 +2,7 @@
 
 **<big>Data:</big>**
 
-File cell-count.csv contains cell count information for various immune cell populations of each patient sample. There are five populations: b_cell, cd8_t_cell, cd4_t_cell, nk_cell, and monocyte. Each row in the file corresponds to a biological sample.
+File cell-count.csv contains cell count information for various immune cell populations of each patient sample. There are five populations: _*b_cell*_, -*cd8_t_cell*_, _*cd4_t_cell*_, -*nk_cell*_, and _*monocyte*_. Each row in the file corresponds to a biological sample.
 
 **<big>Expected Return:</big>**
 
