@@ -6,5 +6,5 @@ This repository contains a project focused on analyzing immune cell population d
 The repo provides a reproducible solution for converting cell counts to relative frequencies, generating boxplots, and analyzing treatment response differences, all tailored to a Unix-based system. It also outlines a database schema for managing large-scale biological sample data, showcasing skills for an internship evaluation.
 
 ## Instructions
-- [How to Run](./InstructionMaterial/HowToRun.md) - Detailed steps to execute the code and reproduce the outputs.
-- [Problem Instructions](./InstructionMaterial/ProblemInstruction.md) - Full technical requirements and problem description.
+- [How to run](./InstructionMaterial/HowToRun.md) - Detailed steps to execute the code and reproduce the outputs.
+- [Problem instructions](./InstructionMaterial/ProblemInstruction.md) - Full technical requirements and problem description.
