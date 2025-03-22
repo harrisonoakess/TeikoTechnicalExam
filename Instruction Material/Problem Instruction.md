@@ -1,81 +1,52 @@
-## Task 1: Python Program for Cell Count Conversion
+# **<big>Technical requirements</big>**
 
-### Objective
-Write a Python program to convert cell counts in `cell-count.csv` to relative frequencies (in percentage) of the total cell count for each sample. The total cell count for a sample is the sum of cells across five populations within that sample.
+**<big>Data:</big>**
 
-### Requirements
-- **Input**: `cell-count.csv`
-- **Output**: A CSV file with the following columns:
-  - `sample`: Sample ID (as in the `sample` column of `cell-count.csv`)
-  - `total_count`: Total cell count of the sample
-  - `population`: Name of the immune cell population (e.g., `b_cell`, `cd8_t_cell`, etc.)
-  - `count`: Cell count for the population
-  - `percentage`: Relative frequency in percentage (calculated as `(count / total_count) * 100`)
+File cell-count.csv contains cell count information for various immune cell populations of each patient sample. There are five populations: b_cell, cd8_t_cell, cd4_t_cell, nk_cell, and monocyte. Each row in the file corresponds to a biological sample.
 
-### Output File
-The program will generate a CSV file containing cell counts and their corresponding relative frequencies for each population of each sample.
+**<big>Expected Return:</big>**
 
----
+Please create a project that can reproducibly be run on a unix based system, and instructions on how to run your code to reproduce the outputs. Return all files in a .zip file and provide either a link to the zip in cloud storage or a GitHub project.
 
-## Task 2: Analysis of Treatment Response in Melanoma Patients
+**<big>Python:</big>**
 
-### Objective
-Among patients receiving treatment `tr1`, compare the differences in cell population relative frequencies between melanoma patients who respond (responders) and those who do not (non-responders) to predict response to `tr1`. Use only PBMC (blood) samples.
+**1.** Please write a Python program to convert cell count in cell-count.csv to relative frequency (in percentage) of total cell count for each sample. Total cell count of each sample is the sum of cells in the five populations of that sample. Please return an output file in csv format with cell count and relative frequency of each population of each sample per line. The output file should have the following columns:
 
-### Data Details
-- Response information is in the `response` column of `cell-count.csv`:
-  - `y`: Responder
-  - `n`: Non-responder
+_*sample:*_ the sample id as in column sample in cell-count.csv
 
-### Subtasks
-#### a. Boxplots
-For each immune cell population, generate a boxplot comparing the relative frequencies of responders (`y`) versus non-responders (`n`) among PBMC samples.
+_*total_count:*_ total cell count of sample
 
-#### b. Statistical Analysis
-Identify which cell populations show significant differences in relative frequencies between responders and non-responders. Provide statistical evidence (e.g., p-values from appropriate tests) to support conclusions.
+_*population:*_ name of the immune cell population (e.g. b_cell, cd8_t_cell, etc.)
 
----
+_*count:*_ cell count
 
-## Database Design
+_*percentage:*_ relative frequency in percentage
 
-### Task 1: Schema Design
-Design a database to capture the type of information in `cell-count.csv`, scalable for hundreds of projects, thousands of samples, and various analytics (e.g., responder vs. non-responder comparisons).
+**2.** Among patients who have treatment tr1, we are interested in comparing the differences in cell population relative frequencies of melanoma patients who respond (responders) to tr1 versus those who do not (non-responders), with the overarching aim of predicting response to treatment tr1. Response information can be found in column response, with value y for responding and value n for non-responding. Please only include PBMC (blood) samples.
 
-#### Prototype Schema
-A rough schema might include the following tables:
-- **Projects**: Stores project metadata
-  - `project_id` (PK)
-  - `project_name`
-  - `description`
-- **Subjects**: Stores patient/subject information
-  - `subject_id` (PK)
-  - `sex` (e.g., male, female)
-  - `condition` (e.g., melanoma)
-- **Samples**: Stores sample metadata
-  - `sample_id` (PK)
-  - `project_id` (FK to Projects)
-  - `subject_id` (FK to Subjects)
-  - `sample_type` (e.g., PBMC)
-  - `time_from_treatment_start` (e.g., 0 for baseline)
-  - `treatment` (e.g., `tr1`)
-  - `response` (e.g., `y`, `n`)
-- **Cell_Counts**: Stores cell count data
-  - `count_id` (PK)
-  - `sample_id` (FK to Samples)
-  - `population` (e.g., `b_cell`, `cd8_t_cell`)
-  - `count` (integer)
-  - `total_count` (calculated total for the sample)
-  - `percentage` (relative frequency)
+a. For each immune cell population, please generate a boxplot of the population relative frequencies comparing responders versus non-responders.
 
-### Task 2: Advantages of a Database
-- **Scalability**: Handles large datasets across multiple projects and samples.
-- **Query Efficiency**: Enables fast retrieval and analysis (e.g., filtering by treatment or response).
-- **Data Integrity**: Enforces relationships and constraints (e.g., foreign keys).
-- **Flexibility**: Supports diverse analytics without restructuring raw files.
+b. Which cell populations are significantly different in relative frequencies between responders and non-responders? Please include statistics to support your conclusion.
 
-### Task 3: Query - Subjects per Condition
-Summarize the number of subjects available for each condition:
-```sql
-SELECT condition, COUNT(DISTINCT subject_id) as subject_count
-FROM Subjects
-GROUP BY condition;
+**<big>Database:</big>**
+
+**1.** How would you design a database to capture the type of information and data in cell-count.csv? Imagine that you’d have hundreds of projects, thousands of samples and various types of analytics you’d want to perform, including the example analysis of responders versus non-responders comparisons above. Please provide a rough prototype schema.
+
+**2.** What would be some advantages in capturing this information in a database?
+
+**3.** Based on the schema you provide in (**1**), please write a query to summarize the number of subjects available for each condition.
+
+**4.** Please write a query that returns all melanoma PBMC samples at baseline (time_from_treatment_start is 0) from patients who have treatment tr1.
+
+**5.** Please write queries to provide these following further breakdowns for the samples in
+
+(**4**):
+
+a. How many samples from each project
+
+b. How many responders/non-responders
+
+c. How many males, females
+
+-------------------
+Link to GitHub project or cloud link for zip
