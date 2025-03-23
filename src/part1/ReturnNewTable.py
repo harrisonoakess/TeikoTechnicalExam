@@ -17,4 +17,9 @@ melt_df = df.melt(
     var_name='population',             # var_name gives a new name for population column
     value_name='count'                 # value_name gives new name for cell counts
 )
-print(melt_df)
+
+# Add a new column that gets percentage: Percentage = (cell count for pupulation/total cell count) * 100
+melt_df['percentage'] = ((melt_df['count'] / melt_df['total_count'])*100)
+
+output_df = melt_df[['sample', 'population', 'count', 'total_count', 'percentage']]
+print(output_df)
