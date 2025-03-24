@@ -1,5 +1,3 @@
-# Percentage = (cell count for pupulation/total cell count) * 100
-
 import pandas as pd
 
 # Read the file in
@@ -21,5 +19,8 @@ melt_df = df.melt(
 # Add a new column that gets percentage: Percentage = (cell count for pupulation/total cell count) * 100
 melt_df['percentage'] = ((melt_df['count'] / melt_df['total_count'])*100)
 
-output_df = melt_df[['sample', 'population', 'count', 'total_count', 'percentage']]
-print(output_df)
+output_df = melt_df[['sample', 'total_count', 'population', 'count', 'percentage']]
+# print(output_df)
+
+# Output the file into my output folder
+output_df.to_csv('../../OutputFiles/PartOneCellFrequencies.csv')
