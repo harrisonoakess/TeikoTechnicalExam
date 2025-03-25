@@ -25,3 +25,6 @@ This project processes cell count data, generates frequency tables and statistic
 1. `python src/part1/ReturnNewTable.py`
 2. `python src/part2/ReturnBoxPlots.py`
 3. `python src/part2/StatisticTests.py`
+
+## Results
+Your results will be found in `OutputFiles/`
