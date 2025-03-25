@@ -3,10 +3,10 @@ import matplotlib.pyplot as plt
 from scipy.stats import ttest_ind, shapiro, mannwhitneyu
 
 # Read the original file in
-df_main = pd.read_csv("../../InstructionMaterial/cell-count.csv") 
+df_main = pd.read_csv("InstructionMaterial/cell-count.csv") 
 
 # Read in the file with the frequencies
-df_frequency = pd.read_csv("../../OutputFiles/PartOneCellFrequencies.csv")
+df_frequency = pd.read_csv("OutputFiles/PartOneCellFrequencies.csv")
 
 df_combined = pd.merge(df_frequency, df_main[['sample', 'condition', 'sample_type', 'treatment', 'response']], 
                        on='sample', how='left')
@@ -20,7 +20,7 @@ df_filtered = df_combined[(df_combined['treatment'] == 'tr1') & # Filter just tr
                           (df_combined['condition'] == 'melanoma') & # Filter just melanoma
                           (df_combined['sample_type'] == 'PBMC')] # Filter just PBMC (blood) sample
 
-output_file = '../../OutputFiles/statistical_analysis.txt'
+output_file = 'OutputFiles/statisticalAnalysis.txt'
 with open(output_file, 'w') as f:
     f.write("Statistical Analysis:\n\n")
     for pop in populations:
@@ -53,3 +53,4 @@ with open(output_file, 'w') as f:
             else:
                 f.write(f"        {pop} -> No significant difference (p > 0.05)\n")
         f.write("\n")
+print("Statistical tests saved to OutputFiles/StatisticalAnalysis.png")

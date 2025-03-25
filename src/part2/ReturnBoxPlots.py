@@ -2,10 +2,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Read the original file in
-df_main = pd.read_csv("../../InstructionMaterial/cell-count.csv") 
+df_main = pd.read_csv("InstructionMaterial/cell-count.csv") 
 
 # Read in the file with the frequencies
-df_frequency = pd.read_csv("../../OutputFiles/PartOneCellFrequencies.csv")
+df_frequency = pd.read_csv("OutputFiles/PartOneCellFrequencies.csv")
 
 df_combined = pd.merge(df_frequency, df_main[['sample', 'condition', 'sample_type', 'treatment', 'response']], 
                        on='sample', how='left')
@@ -38,6 +38,6 @@ for i, pop in enumerate(populations, 1):
     plt.ylabel("Relative Frequencies")
 
 plt.tight_layout()
-plt.savefig('../../OutputFiles/boxplots.png')
+plt.savefig('OutputFiles/boxplots.png')
 plt.close()
 print("Boxplots saved to OutputFiles/boxplots.png")

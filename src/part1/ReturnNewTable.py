@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Read the file in
-df = pd.read_csv("../../InstructionMaterial/cell-count.csv") 
+df = pd.read_csv("InstructionMaterial/cell-count.csv") 
 
 # Name the different population column headers
 populations = ['b_cell', 'cd8_t_cell', 'cd4_t_cell', 'nk_cell', 'monocyte']
@@ -23,5 +23,5 @@ output_df = melt_df[['sample', 'total_count', 'population', 'count', 'percentage
 # print(output_df)
 
 # Output the file into my output folder
-output_df.to_csv('../../OutputFiles/PartOneCellFrequencies.csv', index=False)
-Print('Output saved successfully to OutputFiles/PartOneCellFrequencies.csv')
+output_df.to_csv('OutputFiles/PartOneCellFrequencies.csv', index=False)
+print('Output saved successfully to OutputFiles/PartOneCellFrequencies.csv')
