@@ -1,4 +1,5 @@
 import pandas as pd
+import os
 
 # Read the file in
 df = pd.read_csv("InstructionMaterial/cell-count.csv") 
@@ -21,6 +22,11 @@ melt_df['percentage'] = ((melt_df['count'] / melt_df['total_count'])*100)
 
 output_df = melt_df[['sample', 'total_count', 'population', 'count', 'percentage']]
 # print(output_df)
+
+output_dir = 'OutputFiles'
+if not os.path.exists(output_dir):
+    os.makedirs(output_dir)
+    print(f"Created directory: {output_dir}")
 
 # Output the file into my output folder
 output_df.to_csv('OutputFiles/PartOneCellFrequencies.csv', index=False)
