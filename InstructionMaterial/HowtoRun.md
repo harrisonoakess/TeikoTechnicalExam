@@ -11,8 +11,7 @@ This project processes cell count data, generates frequency tables and statistic
 - `OutputFiles/`: Directory for all outputs.
 
 ## Prerequisites
-- **Python 3**: With `pandas`, `matplotlib`, `scipy` (`pip install pandas matplotlib scipy`).
-- **SQLite3**: For database operations (`sudo apt-get install sqlite3` on Ubuntu, `brew install sqlite` on macOS).
+- **Python**: With `pandas`, `matplotlib`, `scipy` (`pip install pandas matplotlib scipy`).
 - **Git**: To clone the repository (`sudo apt-get install git`).
 
 ## Setup Instructions
@@ -20,3 +19,8 @@ This project processes cell count data, generates frequency tables and statistic
    ```bash
    git clone https://github.com/yourusername/TEIKOTECHNICALEXAM.git
    cd TEIKOTECHNICALEXAM
+
+## Running Instructions
+1. **Run:** python src/part1/ReturnNewTable.py in the directroy ./TEIKOTECHNICALEXAM
+2. **RUN:** pytho3 src/part2/ReturnBoxPlots.py in the directory ./TEIKOTECHNICALEXAM
+3. **RUN:** python src/part2/StatisticTests.py in the directory ./TEIKOTECHNICALEXAM
