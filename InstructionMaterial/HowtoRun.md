@@ -8,7 +8,7 @@ This project processes cell count data, generates frequency tables and statistic
 - `src/part2/ReturnBoxPlots.py`: Creates boxplots (Part 2a).
 - `src/part2/StatisticalTests.py`: Performs statistical tests (Part 2b).
 - `src/part3/DatabaseDesign`: SQL schema and queries (Part 3).
-- `OutputFiles/`: Directory for all outputs.
+- `OutputFiles/`: Directory for all outputs (This will be created during part 1).
 
 ## Prerequisites
 - **Python**: With `pandas`, `matplotlib`, `scipy` (`pip install pandas matplotlib scipy`).
@@ -20,11 +20,12 @@ This project processes cell count data, generates frequency tables and statistic
    git clone https://github.com/yourusername/TEIKOTECHNICALEXAM.git
    cd TEIKOTECHNICALEXAM
 
-## Running Instructions
+## How to Run
 **Run the following in order from the /TEIKOTECHNICALEXAM directory**
 1. `python src/part1/ReturnNewTable.py`
 2. `python src/part2/ReturnBoxPlots.py`
 3. `python src/part2/StatisticTests.py`
 
 ## Results
-Your results will be found in `OutputFiles/`
+- Your results for part one and two will be found in `OutputFiles/`
+- The database code can be found in: `src/part3/DatabaseDesign`
