@@ -21,6 +21,7 @@ This project processes cell count data, generates frequency tables and statistic
    cd TEIKOTECHNICALEXAM
 
 ## Running Instructions
-1. **Run:** python src/part1/ReturnNewTable.py in the directroy ./TEIKOTECHNICALEXAM
-2. **RUN:** pytho3 src/part2/ReturnBoxPlots.py in the directory ./TEIKOTECHNICALEXAM
-3. **RUN:** python src/part2/StatisticTests.py in the directory ./TEIKOTECHNICALEXAM
+**Run the following in order from the /TEIKOTECHNICALEXAM directory**
+1. python src/part1/ReturnNewTable.py
+2. python src/part2/ReturnBoxPlots.py
+3. python src/part2/StatisticTests.py
